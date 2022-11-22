@@ -1,10 +1,15 @@
 import hero from '../assets/styles/main-layout/hero.module.scss'
 import image from '../assets/images/gallery/model.png'
+import { motion } from "framer-motion"
 function Hero() {
     return (
         <div className="container">
             <div className={hero.hero_wrapper}>
-                <div className={hero.text_wrapper}>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className={hero.text_wrapper}>
                     <p>Hello!</p>
                     <h1 className={hero.text_header}>
                         I am <span className={hero.stand_out}>HRS</span> Pathan <br />
@@ -16,10 +21,14 @@ function Hero() {
                         <li>Web Design</li>
                         <li>Front-end Design</li>
                     </ol>
-                </div>
-                <div className={hero.image_wrapper}>
+                </motion.div>
+                <motion.div 
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1}}
+                    initial={{ opacity: 0}}
+                >
                     <img src={image} className={hero.model} alt='Man looking up with his hand on his chin' />
-                </div>
+                </motion.div>
             </div>
         </div>
     )
