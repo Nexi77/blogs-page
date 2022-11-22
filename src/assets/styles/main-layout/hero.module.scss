@@ -1,10 +1,10 @@
 .hero_wrapper {
     display: grid;
-    padding-block: 2em;
+    padding-top: 2em;
     grid-template-columns: 1fr;
     place-items: center;
     @include custom-width(790px) {
-       padding-block: 0;
+       padding-top: 0;
     }
     @include for-tablet-landscape-up {
         grid-template-columns: auto 1fr;
