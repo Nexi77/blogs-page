@@ -13,13 +13,13 @@ function Home() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, staggerChildren: 0.4 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.6 }}
             >
-                <div className={services.wrapper}>
+                <motion.div className={services.wrapper}>
                     <h3>What we do</h3>
                     <h2>Better Services For You</h2>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has</p>
-                </div>
+                </motion.div>
                 <ServicesGrid />
             </motion.div>
         </section>
