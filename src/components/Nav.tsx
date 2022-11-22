@@ -26,19 +26,19 @@ function Nav() {
                 className={`${styles.main_nav} ${opened ? styles.show : ''}`}>
                 <ul className={styles.link_list}>
                   <li>
-                    <NavLink to={`/`} className={styles.link}>
+                    <NavLink to="/" className={styles.link}>
                         <FontAwesomeIcon icon={ faHouse } className={styles.icon} />
                         Home
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to={`/services`} className={styles.link}>
+                    <NavLink to="services" className={styles.link}>
                         <FontAwesomeIcon icon={ faHandHoldingHeart } className={styles.icon} />
                         Services
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to={`/experience`} className={styles.link}>
+                    <NavLink to="experience" className={styles.link}>
                         <FontAwesomeIcon icon={ faBrain } className={styles.icon} />
                         Experience
                     </NavLink>

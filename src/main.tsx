@@ -5,14 +5,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import './assets/styles/variables.scss'
-import './assets/styles/global.scss'
-import './assets/styles/utils.scss'
+import "./assets/styles/styles.scss"
+import Home from './pages/home/views/Home'
 
 const router  = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      }
+    ]
   }
 ])
 
