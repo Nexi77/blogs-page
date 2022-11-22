@@ -20,19 +20,20 @@ function Services(){
                     </p>
                 </SkeletonTheme> 
             }
-            {
-                error && <p className={servicesStyles.error}>Error occured while trying to fetch service data, referesh the page and try again</p>
-            }
-            { data && (
-                <div className={servicesStyles.services_grid}>
-                { 
-                    data.map(service => (
-                        <SingleService key={service.id} service={service}  />
-                    ))
+            <>
+                {
+                    error && <p className={servicesStyles.error}>Error occured while trying to fetch service data, referesh the page and try again</p>
                 }
-                </div>
-            )}
-            
+                { !error && data && (
+                    <div className={servicesStyles.services_grid}>
+                    { 
+                        data.map(service => (
+                            <SingleService key={service.id} service={service}  />
+                        ))
+                    }
+                    </div>
+                )}
+            </>
         </div>
     )
 }
