@@ -1,5 +1,5 @@
-import hero from '../assets/styles/main-layout/hero.module.scss'
-import image from '../assets/images/gallery/model.png'
+import hero from '@/assets/styles/main-layout/hero.module.scss'
+import image from '@/assets/images/gallery/model.png'
 import { motion } from "framer-motion"
 function Hero() {
     return (

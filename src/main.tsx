@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import { router } from "./config/router"
-import "./assets/styles/styles.scss"
+import "@/assets/styles/styles.scss"
 
 
 

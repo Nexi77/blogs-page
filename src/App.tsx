@@ -1,6 +1,6 @@
 import section from './assets/styles/main-layout/section.module.scss'
-import Hero from './components/Hero'
-import Nav from './components/Nav'
+import Hero from '@/components/Hero'
+import Nav from '@/components/Nav'
 import { Outlet } from 'react-router-dom';
 
 function App() {
