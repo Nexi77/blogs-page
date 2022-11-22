@@ -13,7 +13,7 @@ function Home() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, staggerChildren: 0.4 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-350px" }}
             >
                 <div className={services.wrapper}>
                     <h3>What we do</h3>

@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import servicesStyles from '@/assets/styles/home/services.module.scss'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { motion } from 'framer-motion'
 import SingleService from "./components/SingleService";
 
 function Services(){
@@ -12,7 +13,13 @@ function Services(){
     })
 
     return (
-        <div className={servicesStyles.services_grid_wrapper}>
+        <motion.div 
+            className={servicesStyles.services_grid_wrapper}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+        >
             { !data && 
                 <SkeletonTheme baseColor="#202020" highlightColor="#444" >
                     <p>
@@ -34,7 +41,7 @@ function Services(){
                     </div>
                 )}
             </>
-        </div>
+        </motion.div>
     )
 }
 
