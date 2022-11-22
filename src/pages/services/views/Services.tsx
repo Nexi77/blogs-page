@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 function Services(){
     return (
-        <section className={service.service_section}>
+        <section className={service.service_section} id="services">
             <h2 className="sr-only">
                 Text about services I can offer
             </h2>
@@ -11,8 +11,8 @@ function Services(){
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.15 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, staggerChildren: 0.15 }}
                     className={service.text_section}
                 >
                     <h3>Services</h3>

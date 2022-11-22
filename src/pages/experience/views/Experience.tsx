@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 function Experience(){
     return (
-        <section className={service.service_section}>
+        <section className={service.service_section} id="experience">
             <h2 className="sr-only">
                 Text about my experience I got through my journey as frontend dev
             </h2>
@@ -11,8 +11,8 @@ function Experience(){
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.15 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.4 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, staggerChildren: 0.15 }}
                     className={service.text_section}
                 >
                     <h3>Experience</h3>
