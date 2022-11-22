@@ -1,0 +1,106 @@
+header {
+    .nav_wrapper {
+        display: flex;
+        padding-block: 1.5em;
+        align-items: center;
+        justify-content: space-between;
+        @include custom-width(790px) {
+            padding-block: 3em;
+        }
+    }
+    .logo {
+        max-width: 140px;
+    }
+    
+    .link {
+        font-size: 1.2rem;
+        color: var(--link-color);
+        text-decoration: none;
+        @include custom-width(790px) {
+            font-size: .875rem;
+            font-weight: bold;
+        }
+        &:hover, &:focus, &.active {
+            position: relative;
+            color: var(--link-color-active);
+            &::after {
+                content: '';
+                display: 'block';
+                width: 120%;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 3px;
+                background-color: var(--link-color-active);
+            }
+        }
+    }
+
+    .main_nav {
+        position: fixed;
+        left: -100vh;
+        width: 100%;
+        top: 0;
+        z-index: 2;
+        transition: transform 0.2s ease;
+        min-height: 100vh;
+        @include for-tablet-portrait-up {
+            max-width: 300px;
+        }
+        @include custom-width(790px) {
+            position: static;
+            z-index: 0;
+            display: flex;
+            min-height: auto;
+            justify-content: flex-end;
+        }
+        &.show {
+            transform: translateX(100vh);
+            padding: 3em 1.5em 1em;
+            background-color: #222;
+            transition: transform 0.2s ease;
+        }
+    }
+
+    .link_list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        li {
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
+            @include custom-width(790px){
+                border: 0;
+            }
+        }
+        @include custom-width(790px) {
+            flex-direction: row;
+            width: 100%;
+            gap: 4.0625rem;
+            justify-content: flex-end;
+        }
+    }
+
+    .menu_toggle {
+        background-color: transparent;
+        padding: 0;
+        position: relative;
+        z-index: 3;
+        margin: 0;
+        border: 0;
+        color: var(--link-color);
+        font-size: 1.4rem;
+        cursor: pointer;
+        @include custom-width(790px) {
+            display: none;
+        }
+    }
+
+    .icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+        @include custom-width(790px){
+            display: none;
+        }
+    }
+}

@@ -20,9 +20,11 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Set core root defaults */
@@ -78,10 +80,61 @@ select {
 body {
   background-color: var(--bg-main-color);
   font-size: 16px;
+  color: var(--body-color);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.btn {
+  background-color: var(--link-color-active);
+  color: var(--link-color) !important;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  &:hover, &:focus {
+    background-color: var(--btn-hover);
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.btn-link {
+  @media (max-width: 790px){
+    background-color: transparent;
+    padding: 0;
+    font-weight: normal;
+    &:hover, &:focus {
+      color: var(--link-color-active) !important;
+      background-color: transparent;
+      &::after {
+        display: block;
+      }
+    }
+  }
+ 
 }
