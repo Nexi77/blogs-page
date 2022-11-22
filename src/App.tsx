@@ -13,7 +13,9 @@ function App() {
         <Nav />
         <Hero />
       </section>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 }
