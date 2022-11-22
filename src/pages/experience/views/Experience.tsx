@@ -1,9 +1,19 @@
 import service from '@/assets/styles/services/services_article.module.scss';
 import { motion } from 'framer-motion'
+import { useLayoutEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Experience(){
+
+    const section = useRef<HTMLElement>(null);
+    const { hash } = useLocation();
+    useLayoutEffect(() => {
+        if(hash)
+            section.current?.scrollIntoView()
+    })
+    
     return (
-        <section className={service.service_section} id="experience">
+        <section className={service.service_section} id="experience" ref={section}>
             <h2 className="sr-only">
                 Text about my experience I got through my journey as frontend dev
             </h2>

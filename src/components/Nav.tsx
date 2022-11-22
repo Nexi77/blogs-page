@@ -32,13 +32,13 @@ function Nav() {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="services" className={styles.link} onClick={() => setOpened(false)}>
+                    <NavLink to="services#services" className={styles.link} onClick={() => setOpened(false)}>
                         <FontAwesomeIcon icon={ faHandHoldingHeart } className={styles.icon} />
                         Services
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="experience" className={styles.link} onClick={() => setOpened(false)}>
+                    <NavLink to="experience#experience" className={styles.link} onClick={() => setOpened(false)}>
                         <FontAwesomeIcon icon={ faBrain } className={styles.icon} />
                         Experience
                     </NavLink>
