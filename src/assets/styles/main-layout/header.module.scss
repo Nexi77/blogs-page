@@ -44,7 +44,7 @@ header {
         top: 0;
         z-index: 2;
         transition: transform 0.2s ease;
-        min-height: 100vh;
+        min-height: 100%;
         @include for-tablet-portrait-up {
             max-width: 300px;
         }

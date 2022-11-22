@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ overflowX: 'hidden' }}>
       <section className={section.section}>
         <h2 className="sr-only">
           Page navigation and  hero section
