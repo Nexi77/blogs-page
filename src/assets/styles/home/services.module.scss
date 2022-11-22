@@ -34,6 +34,14 @@
     margin: 0 auto;
 }
 
+.error {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: crimson;
+    text-transform: uppercase;
+}
+
 .services_grid {
     display: grid;
     place-items: center;

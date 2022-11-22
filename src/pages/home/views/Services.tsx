@@ -7,7 +7,7 @@ import SingleService from "./components/SingleService";
 
 function Services(){
 
-    const { data } = useQuery('services', fetchServices, {
+    const { data, error } = useQuery('services', fetchServices, {
         refetchOnWindowFocus: true
     })
 
@@ -19,6 +19,9 @@ function Services(){
                         <Skeleton count={4} />
                     </p>
                 </SkeletonTheme> 
+            }
+            {
+                error && <p className={servicesStyles.error}>Error occured while trying to fetch service data, referesh the page and try again</p>
             }
             { data && (
                 <div className={servicesStyles.services_grid}>
