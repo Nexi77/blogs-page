@@ -1,0 +1,151 @@
+.comments_container {
+    padding: 1em 1.5em;
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.1875rem;
+    h3 {
+        margin-bottom: .3125rem;
+    }
+    @include for-tablet-portrait-up {
+        flex-direction: row;
+        justify-content: space-between;
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.comments_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    min-height: 400px;
+}
+
+.sorting {
+    font-weight: 600;
+    font-size: clamp(0.8125rem, 0.7435rem + 0.3448vw, 0.9375rem);
+    button {
+        background-color: transparent;
+        color: var(--link-color);
+        border: 0;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.active_sort {
+    color: var(--link-color-active) !important;
+}
+
+.name_email {
+    font-size: 1.125rem;
+}
+
+.created_at, .content {
+    color: #ccc;
+    font-size: .8125rem;
+    font-weight: 600;
+}
+
+// pagination
+
+.pagination {
+    display: flex;
+    margin-top: 2.8125rem;
+    align-items: center;
+    gap: .3125rem;
+}
+
+.page_tile {
+    background-color: var(--page-tile-bg);
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    color: var(--link-color);
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.page_active {
+    background-color: var(--page-tile-active-bg);
+}
+
+// form 
+
+.form_header {
+    margin-bottom: 4.25rem;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 115%;
+        left: 0;
+        width: 65px;
+        height: 1px;
+        background-color: currentColor;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 140%;
+        left: 0;
+        width: 30px;
+        height: 1px;
+        background-color: currentColor;
+    }
+}
+
+.form_row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    @include for-tablet-portrait-up {
+        flex-direction: row;
+    }
+}
+
+.input_wrapper {
+    flex-grow: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    input, textarea {
+        width: 100%;
+        background-color: transparent;
+        padding: 0.3em 1em;
+        flex-grow: 1;
+        color: var(--link-color);
+        border: 2px solid var(--link-color);
+        &::placeholder {
+            color: var(--link-color);
+        }
+    }
+    textarea {
+        resize: none;
+    }
+}
+
+.submit_button {
+    padding-inline: 5rem !important;
+    padding-block: 0.55rem !important;
+    @include for-tablet-portrait-up {
+        align-self: flex-start;
+    }
+}

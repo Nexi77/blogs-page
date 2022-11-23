@@ -28,7 +28,7 @@ ol {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
@@ -139,6 +139,7 @@ h1,h2,h3,h4,h5,h6{
   color: var(--link-color) !important;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
   text-decoration: none;
   padding: 1rem 3rem;
   &:hover, &:focus {
@@ -162,5 +163,26 @@ h1,h2,h3,h4,h5,h6{
       }
     }
   }
- 
+}
+
+.error {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: crimson;
+  text-transform: uppercase;
+}
+
+section {
+  background-color: var(--services-section-bg);
+  padding-block: 3em;
+  @include for-tablet-landscape-up {
+      padding-block: 5em;
+  }
+  &:nth-child(odd){
+    background-color: var(--odd-sections);
+  }
+  &:nth-child(even){
+    background-color: var(--even-sections);
+  }
 }

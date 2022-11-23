@@ -1,11 +1,3 @@
-.service_section {
-    background-color: var(--services-section-bg);
-    padding-block: 3em;
-    @include for-tablet-landscape-up {
-        padding-block: 5em;
-    }
-}
-
 .text_section {
     h3 {
         text-transform: uppercase;

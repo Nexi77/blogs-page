@@ -2,7 +2,7 @@ import qual from '@/assets/styles/qualifications/qualifications.module.scss'
 import { useQuery } from 'react-query';
 import { fetchExperience } from "@/pages/home/services";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import SingleQual from './components/SingleQual';
+import SingleQual from '../../experience/components/SingleQual';
 import { motion } from 'framer-motion';
 
 function Qualifications(){
@@ -13,7 +13,7 @@ function Qualifications(){
 
     
     return (
-        <section className={qual.section}>
+        <section>
             <h2 className="sr-only">
                 Section with my qualifications listed
             </h2>
@@ -41,7 +41,7 @@ function Qualifications(){
                     }
                     <>
                         {
-                            error && <p className={qual.error}>Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
+                            error && <p className="error">Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
                         }
                         { !error && data && (
                             <div className={qual.exp_grid}>

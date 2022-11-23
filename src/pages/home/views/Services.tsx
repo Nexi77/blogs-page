@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import servicesStyles from '@/assets/styles/home/services.module.scss'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import SingleService from "./components/SingleService";
+import SingleService from "../../services/components/SingleService";
 
 function Services(){
 
@@ -24,7 +24,7 @@ function Services(){
             }
             <>
                 {
-                    error && <p className={servicesStyles.error}>Error occured while trying to fetch service data, referesh the page and try again</p>
+                    error && <p className="error">Error occured while trying to fetch service data, referesh the page and try again</p>
                 }
                 { !error && data && (
                     <div className={servicesStyles.services_grid}>
