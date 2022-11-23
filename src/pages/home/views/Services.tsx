@@ -7,7 +7,7 @@ import SingleService from "../../services/components/SingleService";
 
 function Services(){
 
-    const { data, error } = useQuery('services', fetchServices, {
+    const { data, isLoading, status } = useQuery('services', fetchServices, {
         refetchOnWindowFocus: true
     })
 
@@ -15,27 +15,25 @@ function Services(){
         <div 
             className={servicesStyles.services_grid_wrapper}
         >
-            { !data && 
+            { isLoading && 
                 <SkeletonTheme baseColor="#202020" highlightColor="#444" >
                     <p>
                         <Skeleton count={4} />
                     </p>
                 </SkeletonTheme> 
             }
-            <>
-                {
-                    error && <p className="error">Error occured while trying to fetch service data, referesh the page and try again</p>
+            {
+                status === "error" && <p className="error">Error occured while trying to fetch service data, referesh the page and try again</p>
+            }
+            { data && (
+                <div className={servicesStyles.services_grid}>
+                { 
+                    data.map(service => (
+                        <SingleService key={service.id} service={service}  />
+                    ))
                 }
-                { !error && data && (
-                    <div className={servicesStyles.services_grid}>
-                    { 
-                        data.map(service => (
-                            <SingleService key={service.id} service={service}  />
-                        ))
-                    }
-                    </div>
-                )}
-            </>
+                </div>
+            )}
         </div>
     )
 }

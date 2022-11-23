@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useQuery } from 'react-query';
 import Pagination from '@/pages/comments/components/Pagination';
-import SingleComment from '../components/SingleComment';
+import SingleComment from '@/pages/comments/components/SingleComment';
+import { jumpInVariant } from '@/lib/variants';
 
 function Comments () {
 
@@ -19,7 +20,7 @@ function Comments () {
 
     }
 
-    const { data, error } = useQuery(['comments', order], () => fetchComments(order), {
+    const { data, status, isLoading } = useQuery(['comments', order], () => fetchComments(order), {
         refetchOnWindowFocus: true
     })
 
@@ -38,9 +39,10 @@ function Comments () {
             </h2>
             <div className={comments.comments_container}>
                 <motion.div 
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.4 }}
+                    variants={jumpInVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                     className={comments.header}
                 >
@@ -54,7 +56,7 @@ function Comments () {
                     </div>
                 </motion.div>
                 <div>
-                    { !data && 
+                    { isLoading && 
                         <>
                             <SkeletonTheme baseColor="#202020" highlightColor="#444"  >
                                 <p>
@@ -75,20 +77,18 @@ function Comments () {
                             </SkeletonTheme> 
                         </>
                     }
-                    <>
-                        {
-                            error && <p className="error">Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
+                    {
+                        status === "error" && <p className="error">Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
+                    }
+                    { data && (
+                        <div className={comments.comments_list}>
+                        { 
+                            commentsToRender.map(comment => (
+                                <SingleComment key={comment.createdAt} comment={comment}  />
+                            ))
                         }
-                        { !error && data && (
-                            <div className={comments.comments_list}>
-                            { 
-                                commentsToRender.map(comment => (
-                                    <SingleComment key={comment.createdAt} comment={comment}  />
-                                ))
-                            }
-                            </div>
-                        )}
-                    </>
+                        </div>
+                    )}
                 </div>
                 <Pagination 
                     dataLength={data?.length || 0} 

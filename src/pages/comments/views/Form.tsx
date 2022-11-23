@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import comments from '@/assets/styles/comments/comments.module.scss';
 import { motion } from 'framer-motion';
 import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from 'react-query';
-import { queryClient } from '@/config/react-query';
+import queryClient from '@/config/react-query';
 import { postComment } from '@/pages/home/services';
+import { jumpInVariant } from '@/lib/variants';
 
 const FormSchema = z.object({
     name: z.string(),
@@ -40,9 +42,10 @@ function Form() {
             <div className={comments.comments_container}>
                 <h2 className={comments.form_header}>Add comment</h2>
                 <motion.form
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.4 }}
+                    variants={jumpInVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                     className={comments.form}
                     onSubmit={handleSubmit(onSubmit)}

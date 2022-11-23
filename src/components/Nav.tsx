@@ -1,7 +1,6 @@
 import { NavLink, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
-import {  faBars, faHandHoldingHeart, faBrain, faComment } from '@fortawesome/free-solid-svg-icons'
+import {  faBars, faHandHoldingHeart, faBrain, faComment, faHouse } from '@fortawesome/free-solid-svg-icons'
 import logo from '@/assets/images/global/logo.png'
 import styles from '@/assets/styles/main-layout/header.module.scss'
 import { useState } from 'react'

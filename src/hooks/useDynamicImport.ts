@@ -7,14 +7,11 @@ export function useDynamicSvgImport(iconName: string) {
 
   useEffect(() => {
     setLoading(true);
-    // dynamically import the mentioned svg icon name in props
     const importSvgIcon = async (): Promise<void> => {
-      // please make sure all your svg icons are placed in the same directory
-      // if we want that part to be configurable then instead of iconName we will send iconPath as prop
       try {
         importedIconRef.current = (
           await import(`@/assets/images/icons/${iconName}.svg`)
-        ).ReactComponent; // svgr provides ReactComponent for given svg path
+        ).ReactComponent;
       } catch (err) {
         setError(err);
       } finally {

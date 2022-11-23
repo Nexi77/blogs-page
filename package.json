@@ -34,12 +34,22 @@
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "airbnb": "^0.0.2",
     "eslint": "^8.0.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
     "sass": "^1.56.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
+    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^2.2.2"
   }
 }

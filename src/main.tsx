@@ -5,9 +5,9 @@ import {
 } from "react-router-dom"
 import { QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { router } from "./config/router"
+import queryClient from '@/config/react-query'
+import router from "@/config/router"
 import "@/assets/styles/styles.scss"
-import { queryClient } from '@/config/react-query'
 
 
 

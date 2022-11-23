@@ -1,4 +1,4 @@
-import { useDynamicSvgImport } from "@/lib/customHooks";
+import { useDynamicSvgImport } from "@/hooks/useDynamicImport";
 
 interface IProps {
   iconName: string;
@@ -6,14 +6,14 @@ interface IProps {
   svgProp?: React.SVGProps<SVGSVGElement>;
 }
 
-function SvgIcon(props: IProps) {
+function SvgIconWrapper (props: IProps) {
   const { iconName, wrapperStyle, svgProp } = props;
   const { loading, SvgIcon } = useDynamicSvgImport(iconName);
 
   return (
     <>
       {loading && (
-        <div className="rounded-full bg-slate-400 animate-pulse h-8 w-8"></div>
+        <div className="rounded-full bg-slate-400 animate-pulse h-8 w-8" />
       )}
       {SvgIcon && (
         <div className={wrapperStyle}>
@@ -24,4 +24,4 @@ function SvgIcon(props: IProps) {
   );
 }
 
-export default SvgIcon;
+export default SvgIconWrapper;

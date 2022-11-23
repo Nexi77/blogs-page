@@ -12,7 +12,7 @@ function PageNotFound(){
             <div className={errorPage.text}>
                 <h2>404</h2>
                 <p>
-                    Page you are currently on doesn't exists <FontAwesomeIcon icon={ faSadTear } />
+                    Page you are currently on doesn&apos;t exists <FontAwesomeIcon icon={ faSadTear } />
                 </p>
                 <Link to="/" className={errorPage.link}>Home</Link>
             </div>

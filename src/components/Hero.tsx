@@ -1,13 +1,16 @@
 import hero from '@/assets/styles/main-layout/hero.module.scss'
 import image from '@/assets/images/gallery/model.png'
 import { motion } from "framer-motion"
+import { jumpInVariant } from '@/lib/variants';
+
 function Hero() {
     return (
         <div className="container">
             <div className={hero.hero_wrapper}>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    variants={jumpInVariant}
+                    initial="hidden"
+                    animate="visible"
                     transition={{ duration: 0.5 }}
                     className={hero.text_wrapper}>
                     <p>Hello!</p>
@@ -23,9 +26,9 @@ function Hero() {
                     </ol>
                 </motion.div>
                 <motion.div 
+                    initial={{ opacity: 0}}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1}}
-                    initial={{ opacity: 0}}
                 >
                     <img src={image} className={hero.model} alt='Man looking up with his hand on his chin' />
                 </motion.div>

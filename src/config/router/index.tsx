@@ -5,7 +5,7 @@ import Services from "@/pages/services/views/Services";
 import Experience from "@/pages/experience/views/Experience";
 import PageNotFound from "@/components/PageNotFound";
 
-export const router  = createBrowserRouter([
+const router  = createBrowserRouter([
     {
       path: '/',
       element: <App />,
@@ -29,3 +29,5 @@ export const router  = createBrowserRouter([
       element: <PageNotFound />
     }
   ])
+
+export default router;
