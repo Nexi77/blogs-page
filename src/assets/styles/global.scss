@@ -186,3 +186,17 @@ section {
     background-color: var(--even-sections);
   }
 }
+
+.input_wrapper {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.form-error {
+  color: crimson;
+  font-weight: 600;
+  font-size: .75rem;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 15px);
+}

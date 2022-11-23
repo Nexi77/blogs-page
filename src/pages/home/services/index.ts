@@ -1,4 +1,5 @@
 import axiosInstance from "@/config/axios"
+import { FormSchemaType } from "@/pages/comments/views/Form";
 
 export enum OrderOptions {
     ASC = 'asc',
@@ -17,6 +18,11 @@ export const fetchExperience = async () => {
 
 export const fetchComments = async (order: OrderOptions = OrderOptions.DESC, sortBy: string = 'createdAt',) => {
     const res = await axiosInstance.get<CommentModel[]>(`comments?sortBy=${sortBy}&order=${order}`)
+    return res.data;
+}
+
+export const postComment = async (model: FormSchemaType) => {
+    const res = await axiosInstance.post<FormSchemaType>(`comments`, model);
     return res.data;
 }
 
