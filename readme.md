@@ -9,9 +9,11 @@ __You can look at live preview without need to launch project locally in: [Here]
 ### Project launching on local machine
 
 - clone this repository
-- fire `npm install` in yuor project root directory
+- fire `npm install` in your project root directory
+- add `VITE_APP_API_KEY` env variable to your .env file
 - fire `npm run dev` to start vite development server
 - fire `npm run build` to get production build in `dist` directory
+
 
 
 
