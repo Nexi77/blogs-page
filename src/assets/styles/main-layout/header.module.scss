@@ -14,7 +14,7 @@ header {
     
     .link {
         font-size: 1.2rem;
-        color: var(--link-color);
+        color: $link-color;
         text-decoration: none;
         @include custom-width(790px) {
             font-size: .875rem;
@@ -22,7 +22,7 @@ header {
         }
         &:hover, &:focus, &.active {
             position: relative;
-            color: var(--link-color-active);
+            color: $link-color-active;
             &::after {
                 content: '';
                 display: 'block';
@@ -32,7 +32,7 @@ header {
                 left: 50%;
                 transform: translate(-50%, -50%);
                 height: 3px;
-                background-color: var(--link-color-active);
+                background-color: $link-color-active;
             }
         }
     }
@@ -88,7 +88,7 @@ header {
         z-index: 3;
         margin: 0;
         border: 0;
-        color: var(--link-color);
+        color: $link-color;
         font-size: 1.4rem;
         cursor: pointer;
         @include custom-width(790px) {

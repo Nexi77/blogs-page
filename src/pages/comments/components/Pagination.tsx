@@ -1,6 +1,6 @@
 import comments from '@/assets/styles/comments/comments.module.scss';
 
-function Pagination({ dataLength, activePage, limit, handlePageChange } : PaginationProps) {
+const Pagination = ({ dataLength, activePage, limit, handlePageChange } : PaginationProps) => {
 
     const allPages = Math.ceil(dataLength / limit);
 

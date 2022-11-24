@@ -6,7 +6,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: clamp(1.125rem, 0.9871rem + 0.6897vw, 1.375rem);
-        color: var(--link-color-active);
+        color: $link-color-active;
         font-weight: bold;
     }
     h2 {
@@ -64,5 +64,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--link-color-active);
+    background-color: $link-color-active;
 }

@@ -15,9 +15,9 @@ const FormSchema = z.object({
     content: z.string().min(3, { message: "Must be at least 3 characters long"})
 })
 
-export type FormSchemaType = z.infer<typeof FormSchema>
+type FormSchemaType = z.infer<typeof FormSchema>
 
-function Form() {
+const Form = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormSchemaType>({
         resolver: zodResolver(FormSchema)

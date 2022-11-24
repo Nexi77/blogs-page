@@ -1,18 +1,11 @@
-:root {
-    --bg-main-color: rgba(5,14,23,255);
-    --link-color: rgba(248,248,250,255);
-    --link-color-active: rgba(0,188,213,255);
-    --btn-hover: rgb(0, 172, 223);
-    --body-color: rgba(248,248,250,255);
-    // qalifications
-    --qual-time-color: rgba(97,105,110,255);
-    --qual-desc-color: rgba(162,160,164,255);
-    // comments
-    --page-tile-active-bg: rgba(0,188,213,255);
-    --page-tile-bg: rgba(4,31,42,255);
-    //section 
-    --even-sections: rgba(8,20,32,255);
-    --odd-sections: rgba(5,14,23,255);
-    //form
-    --form-border-color: rgba(170,171,171,255)
-}
+$bg-main-color: rgba(5,14,23,255);
+$link-color: rgba(248,248,250,255);
+$link-color-active: rgba(0,188,213,255);
+$btn-hover: rgb(0, 172, 223);
+$body-color: rgba(248,248,250,255);
+$qual-desc-color: rgba(162,160,164,255);
+$page-tile-bg: rgba(4,31,42,255);
+$page-tile-active-bg: rgba(0,188,213,255);
+$even-sections: rgba(8,20,32,255);
+$odd-sections: rgba(5,14,23,255);
+$form-border-color: rgba(170,171,171,255);

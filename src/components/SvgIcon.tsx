@@ -1,21 +1,21 @@
 import { useDynamicSvgImport } from "@/hooks/useDynamicImport";
+import Skeleton from 'react-loading-skeleton'
 
-interface IProps {
+interface Props {
   iconName: string;
   wrapperStyle?: string;
   svgProp?: React.SVGProps<SVGSVGElement>;
 }
 
-function SvgIconWrapper (props: IProps) {
-  const { iconName, wrapperStyle, svgProp } = props;
+const GenericSkeleton = () => <Skeleton circle />
+
+const SvgIconWrapper =  ({ iconName, svgProp, wrapperStyle }: Props) => {
   const { loading, SvgIcon } = useDynamicSvgImport(iconName);
 
   return (
     <>
-      {loading && (
-        <div className="rounded-full bg-slate-400 animate-pulse h-8 w-8" />
-      )}
-      {SvgIcon && (
+      { loading && <GenericSkeleton /> }
+      { SvgIcon && (
         <div className={wrapperStyle}>
           <SvgIcon {...svgProp} />
         </div>

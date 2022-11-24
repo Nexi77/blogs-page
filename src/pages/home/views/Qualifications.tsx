@@ -1,58 +1,50 @@
 import qual from '@/assets/styles/qualifications/qualifications.module.scss'
 import { useQuery } from 'react-query';
 import { fetchExperience } from "@/pages/home/services";
-import { motion } from 'framer-motion';
+import GenericDiv from '@/components/GenericAnimatedDiv'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import SingleQual from '@/pages/experience/components/SingleQual';
 
-function Qualifications(){
+
+const GenericSkeleton = () => (
+    <SkeletonTheme baseColor="#202020" highlightColor="#444" >
+        <p>
+            <Skeleton count={4} />
+        </p>
+    </SkeletonTheme> 
+)
+
+const GenericError = () => <p className="error">Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
+
+const Qualifications = () => {
 
     const { data, status, isLoading } = useQuery('experience', fetchExperience, {
         refetchOnWindowFocus: true
     })
-
     
     return (
         <section>
             <h2 className="sr-only">
                 Section with my qualifications listed
             </h2>
-            <motion.div 
-                    className="container"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.4 }}
-                    viewport={{ once: true, amount: 0.2 }}
-            >
-                <motion.div className={qual.wrapper}>
+            <GenericDiv className="container" amount={0.2}>
+                <div className={qual.wrapper}>
                     <h3>Qualification</h3>
                     <h2>My Experience</h2>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has</p>
-                </motion.div>
-                <div 
-                    className={qual.exp_grid_wrapper}
-                >
-                { isLoading && 
-                    <SkeletonTheme baseColor="#202020" highlightColor="#444" >
-                        <p>
-                            <Skeleton count={4} />
-                        </p>
-                    </SkeletonTheme> 
-                }
-                {
-                    status === "error" && <p className="error">Error occured while trying to fetch qualificatons data, referesh the page and try again</p>
-                }
+                </div>
+                <div className={qual.exp_grid_wrapper}>
+                { isLoading && <GenericSkeleton /> }
+                { status === "error" && <GenericError /> }
                 { data && (
                     <div className={qual.exp_grid}>
-                    { 
-                        data.map(exp => (
+                        {data.map(exp => (
                             <SingleQual key={exp.id} exp={exp}  />
-                        ))
-                    }
+                        ))}
                     </div>
                 )}
                 </div>
-            </motion.div> 
+            </GenericDiv> 
         </section>
     )
 }

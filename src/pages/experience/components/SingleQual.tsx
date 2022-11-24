@@ -1,11 +1,11 @@
 import { ExperienceModel } from "@/pages/home/services";
-import { motion } from "framer-motion";
+import GenericDiv from '@/components/GenericAnimatedDiv'
 import qual from '@/assets/styles/qualifications/qualifications.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBehance, faDribbble } from '@fortawesome/free-brands-svg-icons';
 import { formatDate } from "@/lib/utils";
 
-function SingleQual ({ exp }: SingleExpProps) {
+const SingleQual = ({ exp }: SingleExpProps) => {
 
     const iconPicker = (company: string) => {
         switch(company) {
@@ -18,12 +18,7 @@ function SingleQual ({ exp }: SingleExpProps) {
     }
 
     return (
-        <motion.div 
-            className={qual.single_block} 
-            initial={{ opacity: 0, scale: 0.5 }} 
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.6 }}
-        >
+        <GenericDiv className={qual.single_block} amount={0.6}>
             <div className={qual.company_row}>
                 <div className={qual.icon}>
                     <FontAwesomeIcon icon={iconPicker(exp.company)} />
@@ -37,7 +32,7 @@ function SingleQual ({ exp }: SingleExpProps) {
                 <h4 className={qual.tile_title}>{`${exp.id}. ${exp.company}`}</h4>
                 <p className={qual.desc}> { exp.description }</p>
             </div>
-        </motion.div>
+        </GenericDiv>
     )
 }
 
