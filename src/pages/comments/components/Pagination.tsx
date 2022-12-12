@@ -1,4 +1,4 @@
-import comments from '@/assets/styles/comments/comments.module.scss';
+import comments from '../styles/comments.module.scss';
 
 const Pagination = ({ dataLength, activePage, limit, handlePageChange } : PaginationProps) => {
 

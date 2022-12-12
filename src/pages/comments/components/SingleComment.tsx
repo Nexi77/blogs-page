@@ -1,7 +1,8 @@
-import comments from '@/assets/styles/comments/comments.module.scss'
 import { formatDate } from '@/lib/utils';
 import { CommentModel } from '@/pages/home/services';
 import GenericDiv from '@/components/GenericAnimatedDiv'
+import comments from '../styles/comments.module.scss';
+
 
 const SingleComment = ({ comment } : CommentProps) => (
     <GenericDiv

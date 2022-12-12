@@ -1,4 +1,4 @@
-import Qualifications from '@/pages/home/views/Qualifications';
+import Qualifications from '@/pages/experience/views/Qualifications';
 import ServicesSection from '@/pages/home/views/ServicesSection';
 
 const Home = () => (

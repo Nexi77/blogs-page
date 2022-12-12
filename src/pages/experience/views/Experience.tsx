@@ -1,8 +1,9 @@
-import service from '@/assets/styles/services/services_article.module.scss';
 import GenericDiv from '@/components/GenericAnimatedDiv'
 import GenericP from '@/components/GenericAnimatedParagraph'
 import { useLayoutEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import service from '../styles/services_article.module.scss';
+
 
 const Experience = () => {
 

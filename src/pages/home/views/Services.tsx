@@ -17,9 +17,7 @@ const GenericError = () => <p className="error">Error occured while trying to fe
 
 const Services = () => {
 
-    const { data, isLoading, status } = useQuery('services', fetchServices, {
-        refetchOnWindowFocus: true
-    })
+    const { data, isLoading, status } = useQuery('services', fetchServices)
 
     if(isLoading) return <GenericSkeleton />
 

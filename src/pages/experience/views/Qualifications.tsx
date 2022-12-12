@@ -1,10 +1,9 @@
-import qual from '@/assets/styles/qualifications/qualifications.module.scss'
 import { useQuery } from 'react-query';
 import { fetchExperience } from "@/pages/home/services";
 import GenericDiv from '@/components/GenericAnimatedDiv'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import SingleQual from '@/pages/experience/components/SingleQual';
-
+import qual from '../styles/qualifications.module.scss';
 
 const GenericSkeleton = () => (
     <SkeletonTheme baseColor="#202020" highlightColor="#444" >
@@ -18,9 +17,7 @@ const GenericError = () => <p className="error">Error occured while trying to fe
 
 const Qualifications = () => {
 
-    const { data, status, isLoading } = useQuery('experience', fetchExperience, {
-        refetchOnWindowFocus: true
-    })
+    const { data, status, isLoading } = useQuery('experience', fetchExperience)
     
     return (
         <section>

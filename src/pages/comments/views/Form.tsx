@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import comments from '@/assets/styles/comments/comments.module.scss';
 import { motion } from 'framer-motion';
 import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -8,6 +7,7 @@ import { useMutation } from 'react-query';
 import queryClient from '@/config/react-query';
 import { postComment } from '@/pages/home/services';
 import { jumpInVariant } from '@/lib/variants';
+import comments from '../styles/comments.module.scss';
 
 const FormSchema = z.object({
     name: z.string(),

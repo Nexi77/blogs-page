@@ -1,9 +1,9 @@
 import { ExperienceModel } from "@/pages/home/services";
 import GenericDiv from '@/components/GenericAnimatedDiv'
-import qual from '@/assets/styles/qualifications/qualifications.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBehance, faDribbble } from '@fortawesome/free-brands-svg-icons';
 import { formatDate } from "@/lib/utils";
+import qual from '../styles/qualifications.module.scss';
 
 const SingleQual = ({ exp }: SingleExpProps) => {
 

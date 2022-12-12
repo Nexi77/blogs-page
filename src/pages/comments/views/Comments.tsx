@@ -1,4 +1,3 @@
-import comments from '@/assets/styles/comments/comments.module.scss';
 import { CommentModel, fetchComments, OrderOptions } from '@/pages/home/services';
 import GenericDiv from '@/components/GenericAnimatedDiv'
 import { useEffect, useState } from 'react';
@@ -6,6 +5,8 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useQuery } from 'react-query';
 import Pagination from '@/pages/comments/components/Pagination';
 import SingleComment from '@/pages/comments/components/SingleComment';
+import comments from '../styles/comments.module.scss';
+
 
 const GenericSkeleton = () => (
     <>
@@ -42,9 +43,7 @@ const Comments = () => {
         setPage(pageNumber);
     }
 
-    const { data, status, isLoading } = useQuery(['comments', order], () => fetchComments(order), {
-        refetchOnWindowFocus: true
-    })
+    const { data, status, isLoading } = useQuery(['comments', order], () => fetchComments(order))
 
     useEffect(() => {
         if(data){
